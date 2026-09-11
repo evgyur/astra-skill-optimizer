@@ -1,12 +1,12 @@
 ---
 name: astra-skill-optimizer
 description: "Use when optimizing skills for Astra."
-version: 1.0.0
+version: 1.1.0
 ---
 
 # Astra skill optimizer
 
-Specializes `create-skill`; load it for edits and `shaw` for engineering. Optimize for the observed model/runtime, not an imagined Astra personality. Do not duplicate the general authoring framework.
+Specializes `create-skill`; load it for skill edits and `shaw` when implementing or testing code. Read-only audits do not require the engineering workflow. Optimize for the observed model/runtime, not an imagined Astra personality. Do not duplicate the general authoring framework.
 
 ## Modes and scope
 
@@ -15,6 +15,14 @@ Specializes `create-skill`; load it for edits and `shaw` for engineering. Optimi
 - `batch <explicit targets>`: same gates per target; never an implicit whole-library rewrite.
 
 Creating this optimizer does not authorize optimizing other skills. Resolve physical root, source repository, overlays and profile filtering before writes. A shared root affects all consumers; preserve enablement and routing.
+
+## Astra-specific audit
+
+Use the [OpenAI guidance checklist](references/astra-guidance.md) for every audit or optimization; it covers descriptions, contextual loading, test scope and early stopping. Inspect the target skill together with applicable `AGENTS.md` and the task prompt, within the authorized workspace. Report cross-surface conflicts; do not edit adjacent instructions without scope authority.
+
+Test triggers with positive, negative and neighboring-task prompts. Check the description actually visible in the runtime index, including truncation, rather than only the full file. Define completion evidence and safe continuation boundaries before refactoring. Preserve protected-effect approvals; model capability claims never grant authority. Shared skills must still support their declared non-Astra consumers.
+
+A supplied source link in an ongoing skill-improvement task is evidence for that skill; do not switch to postwriting without a writing request.
 
 ## Workflow
 
@@ -31,7 +39,7 @@ Preserve privacy, secrets, approval, tenant boundaries, source fidelity and comp
 
 ## Output Contract
 
-Report target, mode, model_evidence, baseline/candidate hashes, contract changes, measurements, tests, behavioral_evidence, verdict, activation and residual_risks. Verdict: keep, revise, reject or needs_more_tests. Distinguish authored, statically validated, behaviorally evaluated and installed. Cite exact receipts and rollback; do not infer global health from scoped checks.
+Report target, mode, model_evidence, baseline/candidate hashes, contract changes, instruction_surfaces, trigger_cases, completion_boundary, measurements, tests, behavioral_evidence, verdict, activation and residual_risks. Verdict: keep, revise, reject or needs_more_tests. Distinguish authored, statically validated, behaviorally evaluated and installed. Cite exact receipts and rollback; do not infer global health from scoped checks.
 
 ## Quick Test Checklist
 

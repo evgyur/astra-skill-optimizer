@@ -2,6 +2,8 @@
 
 A Hermes-native skill for auditing and refactoring agent skills for an observed Astra model/runtime while preserving capability, safety and compatibility.
 
+Version 1.1 adds an [OpenAI-guided audit checklist](references/astra-guidance.md): precise triggers, visible index descriptions, skill/AGENTS.md/task-prompt conflicts, proportional checks, safe continuation and explicit stopping boundaries. Adjacent files are not implicitly in edit scope.
+
 This is an instruction workflow plus read-only measurement and validation helpers, **not an automatic rewriting engine**. No Astra-specific performance improvement has been benchmarked by this release. Model identity must be verified for each evaluation; no vendor affiliation is implied.
 
 ## Use
